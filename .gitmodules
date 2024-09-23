@@ -1,0 +1,3 @@
+[submodule "inference/system_rt_mgt"]
+	path = inference/system_rt_mgt
+	url = https://github.com/mitlab-6g-team/deployment_platform-system_rt_mgt.git
