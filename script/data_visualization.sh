@@ -6,6 +6,7 @@ echo "build .env file for pgadmin"
 echo "===================="
 cp .env.pgadmin_config ./data_visualization/pgadmin/.env
 source .env.postgres_config
+source .env.common.sample
 mkdir -p ./data_visualization/pgadmin-server_config
 cat <<EOR > ./data_visualization/pgadmin-server_config/servers.json
 {
