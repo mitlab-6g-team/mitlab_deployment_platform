@@ -11,6 +11,13 @@ echo "===================="
 cp .env.postgres_config ./permission_mgt/postgres/.env
 
 echo "===================="
+echo "build container for authenticate_postgres"
+echo "===================="
+cd ./permission_mgt/postgres
+bash ./run_authenticate_postgres.sh
+cd ../..
+
+echo "===================="
 echo "build container for agent_mgt-authenticate_middleware"
 echo "===================="
 source ./permission_mgt/postgres/.env
@@ -21,12 +28,6 @@ sed -i "/^HTTP_POSTGRES_PORT=/ s/$/$AUTHENTICATE_POSTGRES_CONTAINER_PORT/" .env
 sed -i "/^HTTP_POSTGRES_USER=/ s/$/$AUTHENTICATE_POSTGRES_USER/" .env
 sed -i "/^HTTP_POSTGRES_PASSWORD=/ s/$/$AUTHENTICATE_POSTGRES_PASSWORD/" .env
 bash ./shell/run_backend.sh
-
-echo "===================="
-echo "build container for authenticate_postgres"
-echo "===================="
-cd ../../postgres
-bash ./run_authenticate_postgres.sh
 
 echo "===================="
 echo "init authenticate_postgresql"

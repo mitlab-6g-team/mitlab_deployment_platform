@@ -11,6 +11,13 @@ echo "===================="
 cp .env.postgres_config ./metadata_resource_mgt/postgres/.env
 
 echo "===================="
+echo "build container for metadata_postgres"
+echo "===================="
+cd ./metadata_resource_mgt/postgres
+bash ./run_metadata_postgres.sh
+cd ../..
+
+echo "===================="
 echo "build container for agent_mgt-metadata_mgt"
 echo "===================="
 source ./metadata_resource_mgt/postgres/.env
@@ -21,9 +28,3 @@ sed -i "/^HTTP_POSTGRES_PORT=/ s/$/$METADATA_POSTGRES_CONTAINER_PORT/" .env
 sed -i "/^HTTP_POSTGRES_USER=/ s/$/$METADATA_POSTGRES_USER/" .env
 sed -i "/^HTTP_POSTGRES_PASSWORD=/ s/$/$METADATA_POSTGRES_PASSWORD/" .env
 bash ./shell/run_backend.sh
-
-echo "===================="
-echo "build container for metadata_postgres"
-echo "===================="
-cd ../../postgres
-bash ./run_metadata_postgres.sh
