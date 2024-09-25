@@ -1,3 +1,21 @@
 [submodule "inference/system_rt_mgt"]
 	path = inference/system_rt_mgt
 	url = https://github.com/mitlab-6g-team/deployment_platform-system_rt_mgt.git
+[submodule "file_resource_mgt/django/file_mgt"]
+	path = file_resource_mgt/django/file_mgt
+	url = https://github.com/mitlab-6g-team/deployment_platform-agent_file_mgt.git
+[submodule "layer_connector/django/central_connector"]
+	path = layer_connector/django/central_connector
+	url = https://github.com/mitlab-6g-team/deployment_platform-agent_central_connector.git
+[submodule "layer_connector/django/inference_connector"]
+	path = layer_connector/django/inference_connector
+	url = https://github.com/mitlab-6g-team/deployment_platform-agent_inference_connector.git
+[submodule "metadata_resource_mgt/django/metadata_mgt"]
+	path = metadata_resource_mgt/django/metadata_mgt
+	url = https://github.com/mitlab-6g-team/deployment_platform-agent_metadata_mgt.git
+[submodule "permission_mgt/django/authenticate_middleware"]
+	path = permission_mgt/django/authenticate_middleware
+	url = https://github.com/mitlab-6g-team/deployment_platform-agent_authenticate_middleware.git
+[submodule "inference/inference_rt_mgt"]
+	path = inference/inference_rt_mgt
+	url = https://github.com/mitlab-6g-team/deployment_platform-inference_mgt.git
