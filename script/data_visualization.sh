@@ -12,20 +12,20 @@ cat <<EOR > ./data_visualization/pgadmin-server_config/servers.json
 {
     "Servers": {
         "1": {
-            "Name": "${METADATA_POSTGRES_DB}",
+            "Name": "metadata_postgres",
             "Group": "Servers",
             "Host": "${DEPLOYMENT_PF_HOST_IP}",
-            "Port": "${METADATA_POSTGRES_CONTAINER_PORT}",
+            "Port": ${METADATA_POSTGRES_CONTAINER_PORT},
             "MaintenanceDB": "${METADATA_POSTGRES_DB}",
             "Username": "${METADATA_POSTGRES_USER}",
             "Password": "${METADATA_POSTGRES_PASSWORD}",
             "SSLMode": "prefer"
         },
         "2": {
-            "Name": "${AUTHENTICATE_POSTGRES_DB}",
+            "Name": "authenticate_postgres",
             "Group": "Servers",
             "Host": "${DEPLOYMENT_PF_HOST_IP}",
-            "Port": "${AUTHENTICATE_POSTGRES_CONTAINER_PORT}",
+            "Port": ${AUTHENTICATE_POSTGRES_CONTAINER_PORT},
             "MaintenanceDB": "${AUTHENTICATE_POSTGRES_DB}",
             "Username": "${AUTHENTICATE_POSTGRES_USER}",
             "Password": "${AUTHENTICATE_POSTGRES_PASSWORD}",

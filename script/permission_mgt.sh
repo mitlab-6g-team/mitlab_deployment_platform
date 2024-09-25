@@ -28,8 +28,3 @@ sed -i "/^HTTP_POSTGRES_PORT=/ s/$/$AUTHENTICATE_POSTGRES_CONTAINER_PORT/" .env
 sed -i "/^HTTP_POSTGRES_USER=/ s/$/$AUTHENTICATE_POSTGRES_USER/" .env
 sed -i "/^HTTP_POSTGRES_PASSWORD=/ s/$/$AUTHENTICATE_POSTGRES_PASSWORD/" .env
 bash ./shell/run_backend.sh
-
-echo "===================="
-echo "init authenticate_postgresql"
-echo "===================="
-docker exec -it agent_authenticate_middleware python manage.py generate_real_data --table_name=api  --action=restore
