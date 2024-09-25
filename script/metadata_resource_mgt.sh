@@ -13,6 +13,7 @@ cp .env.postgres_config ./metadata_resource_mgt/postgres/.env
 echo "===================="
 echo "build container for agent_mgt-metadata_mgt"
 echo "===================="
+source ./metadata_resource_mgt/postgres/.env
 cd ./metadata_resource_mgt/django/metadata_mgt
 cp .env.sample .env
 sed -i "/^HTTP_POSTGRES_DATABASE_NAME=/ s/$/$METADATA_POSTGRES_DB/" .env

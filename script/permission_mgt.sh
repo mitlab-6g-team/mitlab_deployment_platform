@@ -13,6 +13,7 @@ cp .env.postgres_config ./permission_mgt/postgres/.env
 echo "===================="
 echo "build container for agent_mgt-authenticate_middleware"
 echo "===================="
+source ./permission_mgt/postgres/.env
 cd ./permission_mgt/django/authenticate_middleware
 cp .env.sample .env
 sed -i "/^HTTP_POSTGRES_DATABASE_NAME=/ s/$/$AUTHENTICATE_POSTGRES_DB/" .env
