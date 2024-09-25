@@ -11,7 +11,7 @@ git submodule update --init --recursive
 # set the env params
 # ==================================
 cp .env.sample .env
-cp ../.env.common .env.common
+cp ../../.env.common.sample .env.common
 
 # ==================================
 # build image and run container
