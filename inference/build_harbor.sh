@@ -24,6 +24,7 @@ sed -i "/data_volume: /s/\/data/\/harbor_data/" harbor.yml
 # ==================================
 # set docker daemon
 # ==================================
+sudo touch /etc/docker/daemon.json
 sudo chmod 777 /etc/docker/daemon.json
 sudo cat <<EOR > /etc/docker/daemon.json
 {
@@ -32,6 +33,7 @@ sudo cat <<EOR > /etc/docker/daemon.json
 EOR
 
 sudo cat /etc/docker/daemon.json
+
 # ==================================
 # restart docker
 # ==================================
