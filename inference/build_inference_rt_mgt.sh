@@ -13,10 +13,15 @@ git submodule update --init --recursive
 cp .env.sample .env
 cp .env.common.sample .env.common
 
+sed -i "s/^DEPLOYMENT_PF_HOST_IP=.*/&$DEPLOYMENT_PF_HOST_IP/" ".env.common"
+sed -i "s/^EDGE_SERVER_HOST_IP=.*/&$EDGE_SERVER_IP/" ".env.common"
+sed -i "s/^INFERENCE_CONNECTOR_CONTAINER_PORT=.*/&$EDGE_SERVER_IP/" ".env.common"
+sed -i "s/^INFERENCE_CONNECTOR_API_VERSION=.*/&$EDGE_SERVER_IP/" ".env.common"
+
 # ==================================
 # build image and run container
 # ==================================
-docker build -t $HOST_IP/position/master_container:latest .
+docker build -t $DEPLOYMENT_PF_HOST_IP/position/master_container:latest .
 sudo chmod 777 $HOME/.docker
-docker login $HOST_IP -u admin -p $HARBOR_USER_PW
-docker push $HOST_IP/position/master_container:latest
+docker login $DEPLOYMENT_PF_HOST_IP -u admin -p $HARBOR_USER_PW
+docker push $DEPLOYMENT_PF_HOST_IP/position/master_container:latest

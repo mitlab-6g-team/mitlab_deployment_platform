@@ -11,7 +11,7 @@ cp harbor.yml.tmpl harbor.yml
 # ==================================
 # set harbor.yml
 # ==================================
-sed -i "/hostname/s/reg.mydomain.com/$HOST_IP/" harbor.yml
+sed -i "/hostname/s/reg.mydomain.com/$DEPLOYMENT_PF_HOST_IP/" harbor.yml
 sed -i "/harbor_admin_password/s/Harbor12345/$HARBOR_USER_PW/" harbor.yml
 
 sed -i '/https:/s/^/# /' harbor.yml
@@ -28,7 +28,7 @@ sudo touch /etc/docker/daemon.json
 sudo chmod 777 /etc/docker/daemon.json
 sudo cat <<EOR > /etc/docker/daemon.json
 {
-    "insecure-registries" : ["$HOST_IP:80", "$HOST_IP"]
+    "insecure-registries" : ["$DEPLOYMENT_PF_HOST_IP:80", "$DEPLOYMENT_PF_HOST_IP"]
 }
 EOR
 

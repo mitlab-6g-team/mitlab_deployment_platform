@@ -1,6 +1,8 @@
 #!/bin/bash
 
 source .env.inference_config
+source .env.common.sample
+
 cd ./inference
 # ==================================
 # install harbor

@@ -12,6 +12,7 @@ git submodule update --init --recursive
 # ==================================
 cp .env.sample .env
 cp ../../.env.common.sample .env.common
+sed -i "s/^HTTPS_HARBOR_PASSWORD=.*/&$HARBOR_USER_PW/" ".env"
 
 # ==================================
 # build image and run container
