@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ../.env.inference_config
+source ../.env.common.sample
 cd ./system_rt_mgt
 
 # ==================================
