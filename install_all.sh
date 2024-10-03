@@ -39,3 +39,8 @@ echo "===================="
 echo "init authenticate_postgresql"
 echo "===================="
 docker exec -it agent_authenticate_middleware python manage.py generate_real_data --table_name=api  --action=restore
+
+echo "===================="
+echo "install agent dashaboard"
+echo "===================="
+bash ./script/dashboard.sh

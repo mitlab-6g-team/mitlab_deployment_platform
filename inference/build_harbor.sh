@@ -45,5 +45,5 @@ sudo systemctl restart docker
 ./prepare
 sudo ./install.sh
 
-curl -u "admin:$HARBOR_USER_PW" -X POST "http://localhost/api/v2.0/projects" -H "Content-Type: application/json" -d '{"project_name": "inference_host", "public": false}'
-curl -u "admin:$HARBOR_USER_PW" -X POST "http://localhost/api/v2.0/projects" -H "Content-Type: application/json" -d '{"project_name": "position", "public": false}'
+curl -u "admin:$HARBOR_USER_PW" -X POST "http://$DEPLOYMENT_PF_HOST_IP/api/v2.0/projects" -H "Content-Type: application/json" -d '{"project_name": "inference_host", "public": false}'
+curl -u "admin:$HARBOR_USER_PW" -X POST "http://$DEPLOYMENT_PF_HOST_IP/api/v2.0/projects" -H "Content-Type: application/json" -d '{"project_name": "position", "public": false}'

@@ -19,3 +19,6 @@
 [submodule "inference/inference_rt_mgt"]
 	path = inference/inference_rt_mgt
 	url = https://github.com/mitlab-6g-team/deployment_platform-inference_mgt.git
+[submodule "agent_dashboard"]
+	path = agent_dashboard
+	url = https://github.com/mitlab-6g-team/deployment_platform-agent_user_dashboard.git
