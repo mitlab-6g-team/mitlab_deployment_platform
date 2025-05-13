@@ -45,5 +45,10 @@ sudo systemctl restart docker
 ./prepare
 sudo ./install.sh
 
+echo "check deply harbor complete"
+until curl -s -u "admin:$HARBOR_USER_PW" -o /dev/null -w "%{http_code}" "http://$DEPLOYMENT_PF_HOST_IP/api/v2.0/projects" | grep -q "200"; do
+    sleep 5
+done
+
 curl -u "admin:$HARBOR_USER_PW" -X POST "http://$DEPLOYMENT_PF_HOST_IP/api/v2.0/projects" -H "Content-Type: application/json" -d '{"project_name": "inference_host", "public": false}'
 curl -u "admin:$HARBOR_USER_PW" -X POST "http://$DEPLOYMENT_PF_HOST_IP/api/v2.0/projects" -H "Content-Type: application/json" -d '{"project_name": "position", "public": false}'
