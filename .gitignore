@@ -1,3 +1,5 @@
 .env
 .env.common
 servers.json
+inference/harbor/
+inference/harbor-offline-installer-v2.8.1.tgz
